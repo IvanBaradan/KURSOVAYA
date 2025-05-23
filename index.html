@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Курс Python - Программирование для начинающих</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Курс программирования на Python</h1>
+            <p>Научитесь программировать с нуля и создавайте реальные проекты</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="course-description">
+            <h2>Описание курса</h2>
+            <p>Этот курс предназначен для тех, кто хочет освоить программирование на Python с нуля. Вы изучите основные концепции программирования, научитесь работать с данными, создавать функции и классы, а также разрабатывать собственные приложения.</p>
+            
+            <div class="modules-grid">
+                <div class="module-card" onclick="openModal('module1')">
+                    <div class="module-image" style="background-image: url('photo1.avif');"></div>
+                    <div class="module-content">
+                        <h3>Основы Python</h3>
+                        <p>Синтаксис, переменные, типы данных и операторы</p>
+                    </div>
+                </div>
+
+                <div class="module-card" onclick="openModal('module2')">
+                    <div class="module-image" style="background-image: url('photo2.avif');"></div>
+                    <div class="module-content">
+                        <h3>Функции и модули</h3>
+                        <p>Создание и использование функций, работа с модулями</p>
+                    </div>
+                </div>
+
+                <div class="module-card" onclick="openModal('module3')">
+                    <div class="module-image" style="background-image: url('photo3.avif');"></div>
+                    <div class="module-content">
+                        <h3>Работа с данными</h3>
+                        <p>Списки, словари, файлы и обработка исключений</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="practice">
+            <h2>Проектные задания</h2>
+            
+            <div class="practice-item" onclick="openModal('practice1')">
+                <h3>Калькулятор</h3>
+                <p>Создайте консольный калькулятор, выполняющий основные арифметические операции</p>
+                <div class="code-example">
+                    def calculator():
+                        num1 = float(input("Введите первое число: "))
+                        operation = input("Выберите операцию (+, -, *, /): ")
+                        num2 = float(input("Введите второе число: "))
+                        
+                        if operation == '+':
+                            print(f"Результат: {num1 + num2}")
+                        elif operation == '-':
+                            print(f"Результат: {num1 - num2}")
+                        # ... другие операции
+                </div>
+            </div>
+
+            <div class="practice-item" onclick="openModal('practice2')">
+                <h3>Угадай число</h3>
+                <p>Реализуйте игру, где компьютер загадывает число, а пользователь пытается его угадать</p>
+                <div class="code-example">
+                    import random
+
+                    def guess_number():
+                        number = random.randint(1, 100)
+                        attempts = 0
+                        
+                        while True:
+                            guess = int(input("Угадайте число (1-100): "))
+                            attempts += 1
+                            
+                            if guess < number:
+                                print("Больше!")
+                            elif guess > number:
+                                print("Меньше!")
+                            else:
+                                print(f"Поздравляем! Вы угадали за {attempts} попыток.")
+                                break
+                </div>
+            </div>
+        </section>
+
+        <section id="resources">
+            <h2>Полезные ресурсы</h2>
+            <div class="resources-list">
+                <a href="https://docs.python.org/3/tutorial/" class="btn" target="_blank">Официальная документация</a>
+                <a href="https://www.python.org" class="btn" target="_blank">Установка Python</a>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div style="text-align: center; margin: 40px 0;">
+            <a href="item.html" class="btn">Связь с преподавателем</a>
+        </div>
+    </footer>
+
+    <!-- Модальные окна -->
+    <div id="module1" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <h2>Основы Python</h2>
+            <p>В этом модуле вы изучите базовый синтаксис Python, работу с переменными и основными типами данных.</p>
+            
+            <h3>Темы модуля:</h3>
+            <ul>
+                <li>Установка и настройка Python</li>
+                <li>Переменные и типы данных</li>
+                <li>Основные операторы</li>
+                <li>Ввод и вывод данных</li>
+                <li>Условные операторы</li>
+            </ul>
+            
+            <h3>Пример кода:</h3>
+            <div class="code-example">
+                # Простая программа приветствия
+                name = input("Введите ваше имя: ")
+                age = int(input("Введите ваш возраст: "))
+                
+                if age >= 18:
+                    print(f"Добро пожаловать, {name}! Вы совершеннолетний.")
+                else:
+                    print(f"Привет, {name}! Тебе ещё {18 - age} лет до совершеннолетия.")
+            </div>
+        </div>
+    </div>
+
+    <div id="module2" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <h2>Функции и модули</h2>
+            <p>Этот модуль посвящен созданию и использованию функций, а также работе с модулями Python.</p>
+            
+            <h3>Темы модуля:</h3>
+            <ul>
+                <li>Определение функций</li>
+                <li>Аргументы и возвращаемые значения</li>
+                <li>Области видимости</li>
+                <li>Рекурсия</li>
+                <li>Стандартные модули Python</li>
+                <li>Создание собственных модулей</li>
+            </ul>
+            
+            <h3>Пример кода:</h3>
+            <div class="code-example">
+                # Функция для вычисления факториала
+                def factorial(n):
+                    if n == 0:
+                        return 1
+                    else:
+                        return n * factorial(n - 1)
+                
+                # Использование функции
+                number = 5
+                print(f"Факториал числа {number} равен {factorial(number)}")
+            </div>
+        </div>
+    </div>
+
+    <div id="module3" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <h2>Работа с данными</h2>
+            <p>В этом модуле вы научитесь эффективно работать с различными структурами данных в Python.</p>
+            
+            <h3>Темы модуля:</h3>
+            <ul>
+                <li>Списки и кортежи</li>
+                <li>Словари и множества</li>
+                <li>Генераторы списков</li>
+                <li>Работа с файлами</li>
+                <li>Обработка исключений</li>
+            </ul>
+            
+            <h3>Пример кода:</h3>
+            <div class="code-example">
+                # Работа со списком и файлом
+                try:
+                    with open('data.txt', 'r') as file:
+                        numbers = [float(line.strip()) for line in file]
+                    
+                    # Вычисление среднего значения
+                    average = sum(numbers) / len(numbers)
+                    print(f"Среднее значение: {average:.2f}")
+                    
+                except FileNotFoundError:
+                    print("Файл не найден!")
+                except ValueError:
+                    print("Ошибка в данных файла!")
+            </div>
+        </div>
+    </div>
+
+    <div id="practice1" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <h2>Калькулятор</h2>
+            <p>Создайте консольный калькулятор, который выполняет основные арифметические операции.</p>
+            
+            <h3>Требования:</h3>
+            <ul>
+                <li>Программа должна запрашивать два числа</li>
+                <li>Предлагать выбор операции (+, -, *, /)</li>
+                <li>Выводить результат вычисления</li>
+                <li>Обрабатывать деление на ноль</li>
+            </ul>
+            
+            <h3>Пример решения:</h3>
+            <div class="code-example">
+                def calculator():
+                    try:
+                        num1 = float(input("Введите первое число: "))
+                        operation = input("Выберите операцию (+, -, *, /): ")
+                        num2 = float(input("Введите второе число: "))
+                        
+                        if operation == '+':
+                            print(f"Результат: {num1 + num2}")
+                        elif operation == '-':
+                            print(f"Результат: {num1 - num2}")
+                        elif operation == '*':
+                            print(f"Результат: {num1 * num2}")
+                        elif operation == '/':
+                            if num2 == 0:
+                                print("Ошибка: деление на ноль!")
+                            else:
+                                print(f"Результат: {num1 / num2}")
+                        else:
+                            print("Неизвестная операция!")
+                    except ValueError:
+                        print("Ошибка: введите корректные числа!")
+                
+                calculator()
+            </div>
+        </div>
+    </div>
+
+    <div id="practice2" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <h2>Угадай число</h2>
+            <p>Реализуйте игру, где компьютер загадывает число, а пользователь пытается его угадать.</p>
+            
+            <h3>Требования:</h3>
+            <ul>
+                <li>Компьютер загадывает число от 1 до 100</li>
+                <li>Пользователь вводит свои догадки</li>
+                <li>Программа подсказывает "больше" или "меньше"</li>
+                <li>После угадывания выводится количество попыток</li>
+                <li>Добавьте ограничение на количество попыток (например, 10)</li>
+            </ul>
+            
+            <h3>Пример решения:</h3>
+            <div class="code-example">
+                import random
+
+                def guess_number():
+                    number = random.randint(1, 100)
+                    max_attempts = 10
+                    attempts = 0
+                    
+                    print("Я загадал число от 1 до 100. Попробуй угадать!")
+                    
+                    while attempts < max_attempts:
+                        try:
+                            guess = int(input(f"Попытка {attempts + 1}/{max_attempts}: "))
+                        except ValueError:
+                            print("Пожалуйста, введите число!")
+                            continue
+                            
+                        attempts += 1
+                        
+                        if guess < number:
+                            print("Больше!")
+                        elif guess > number:
+                            print("Меньше!")
+                        else:
+                            print(f"Поздравляем! Вы угадали за {attempts} попыток.")
+                            return
+                    
+                    print(f"К сожалению, вы не угадали. Я загадал число {number}.")
+                
+                guess_number()
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
